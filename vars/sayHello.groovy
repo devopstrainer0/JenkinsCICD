@@ -5,7 +5,7 @@ def call(String name = 'human') {
                 def my_list = ["abc.dat@yamil.com", "abc1.dat@yamil.com", "abc2.dat@yamil.com", "abc3.dat@yamil.com"]
                 env.my_string = my_list.join(",")
                 println my_string
-                sh '''
+                sh """
                 echo "my string is : ${my_string}"
                 cat <<EOF >> 1.json
                   {
@@ -38,8 +38,8 @@ def call(String name = 'human') {
 EOF
 ls -ltr
                 
-                '''
-                sh '''
+                """
+                sh """
                #!/bin/bash
 # Set the output file name
 output_file="output1.html"
@@ -91,7 +91,7 @@ done
 # Close the HTML file
 echo "</body>" >> $output_file
 echo "</html>" >> $output_file
-                '''
+                """
             publishHTML target: [
             allowMissing: false,
             alwaysLinkToLastBuild: false,
