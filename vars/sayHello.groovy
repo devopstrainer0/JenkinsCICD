@@ -39,7 +39,7 @@ EOF
 ls -ltr
                 
                 """
-                sh """
+                sh '''
                #!/bin/bash
 # Set the output file name
 output_file="output1.html"
@@ -91,7 +91,7 @@ done
 # Close the HTML file
 echo "</body>" >> $output_file
 echo "</html>" >> $output_file
-                """
+                '''
             publishHTML target: [
             allowMissing: false,
             alwaysLinkToLastBuild: false,
