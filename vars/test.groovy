@@ -25,11 +25,7 @@ def call(Map params = [:]) {
         }
         
     }
-    params.each { gkey, val ->
-                if (gkey == 'giturl') {
-                    params.put(gkey, "${itr}")
-                }
-            }
+
             if (cList.size() == bList.size()) {
                 for (i = 0; i < cList.size(); i++) {
                     params.each { key, val ->
