@@ -14,13 +14,13 @@ def call(Map params = [:]) {
             if (count == 0) {
                 println "The count is 0!"
                 println "Value: ${value}"
-                cList = value
+               cList = Eval.me(value)
                 println "cList: ${cList}"
                 count++
             } else {
                 println "The count is 1!"
                 println "Value: ${value}"
-                bList = value
+                bList = Eval.me(value)
                 println "bList: ${bList}"
             }
         }
