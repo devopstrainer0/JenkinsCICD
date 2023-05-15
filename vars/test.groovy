@@ -16,11 +16,20 @@ def call(Map params = [:]) {
            if (count == 0) {
                 println "The count is 0!"
                   echo "Value: ${value}"
+              for (i in value){
+                 cList.add(i)
+              
+              }
+              echo "cList: ${cList}"
                 count++
                    }else {
                 println "The count is 1!"
                   echo "Value: ${value}"
-               
+                for (j in value){
+                 bList.add(j)
+                
+              }
+                echo "bList: ${bList}"
                }
         }
     }
