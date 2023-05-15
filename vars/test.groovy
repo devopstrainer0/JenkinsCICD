@@ -18,8 +18,7 @@ def call(Map params = [:]) {
            if (count == 0) {
                 println "The count is 0!"
                 count++
-               }
-            if (count == 1) {
+                   }else {
                 println "The count is 1!"
                
                }
