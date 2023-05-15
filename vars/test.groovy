@@ -1,8 +1,11 @@
 def call(Map params = [:]) {
-  def myList = params.name
-  for (item in myList) {
-    println item
-  }
+   println "Name: ${params.name}"
+    println "Number: ${params.number}"
+    
+    params.inputScan.each { key, value ->
+        println "Key: ${key}"
+        println "Values: ${value.join(', ')}"
+    }
   
   
 }
