@@ -1,11 +1,12 @@
 def call(Map params = [:]) {
+         def cList = []
+        def bList = []
     println params
     echo "*********************************************"
     println "Name: ${params.name}"
     println "Number: ${params.number}"
     for (def itr in params.inputScan.keySet()) {
-        def cList = []
-        def bList = []
+   
         echo "Key: ${itr}"
         def count = 0
         for (def value in params.inputScan.get(itr)) {
