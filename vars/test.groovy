@@ -28,8 +28,8 @@ def call(Map params = [:]) {
                 echo "bList: ${bList}"
                }
                
-               params.each { gkey, value ->
-       					 if (gkey== 'giturl'){
+               params.each { key, value ->
+       					 if (key== 'giturl'){
         					params.put(key,"${itr}")
         					}
        					
