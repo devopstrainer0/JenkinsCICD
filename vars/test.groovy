@@ -25,17 +25,17 @@ def call(Map params = [:]) {
             }
             
             for (i = 0; i < cList.size(); i++) {
-                params.each { key, value ->
-                    if (key == 'giturl') {
-                        params.put(key, "${itr}")
+                params.each { tkey, value ->
+                    if (tkey == 'giturl') {
+                        params.put(tkey, "${itr}")
                     }
                     
-                    if (key == 'compname') {
-                        params.put(key, cList[i])
+                    if (tkey == 'compname') {
+                        params.put(tkey, cList[i])
                     }
                     
-                    if (key == 'buildfile') {
-                        params.put(key, bList[i])
+                    if (tkey == 'buildfile') {
+                        params.put(tkey, bList[i])
                     }
                 }
                 
