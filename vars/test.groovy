@@ -8,22 +8,22 @@ def call(Map params = [:]) {
     }
   */
   for (def key in params.inputScan.keySet()) {
-       //def cList = []
-     //  def bList = []
+       def cList = []
+      def bList = []
         echo "Key: ${key}"
         def count = 0
         for (def value in params.inputScan.get(key)) {
            if (count == 0) {
                 println "The count is 0!"
                   echo "Value: ${value}"
-                def cList = value
+                cList = value
          
               echo "cList: ${cList}"
                 count++
                    }else {
                 println "The count is 1!"
                   echo "Value: ${value}"
-              def bList = value
+              bList = value
               
                 echo "bList: ${bList}"
                }
