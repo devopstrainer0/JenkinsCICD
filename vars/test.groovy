@@ -1,4 +1,3 @@
-
 def call(Map params = [:]) {
     println params
     echo "*********************************************"
@@ -22,7 +21,9 @@ def call(Map params = [:]) {
                 bList = value
                 echo "bList: ${bList}"
             }
-            params.each { gkey, val ->
+            
+        }
+        params.each { gkey, val ->
                 if (gkey == 'giturl') {
                     params.put(gkey, "${itr}")
                 }
@@ -39,7 +40,6 @@ def call(Map params = [:]) {
                     }
                 }
             }
-        }
     }
     echo "*********************************************"
     println params
