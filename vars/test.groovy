@@ -1,18 +1,18 @@
 def call(Map params = [:]) {
+   
+   println params
+   echo "*********************************************"
    println "Name: ${params.name}"
     println "Number: ${params.number}"
     
-/*    params.inputScan.each { key, value ->
-        println "Key: ${key}"
-        println "Values: ${value.join(', ')}"
-    }
-  */
-  for (def key in params.inputScan.keySet()) {
+   
+ 
+  for (def itr in params.inputScan.keySet()) {
        def cList = []
       def bList = []
-        echo "Key: ${key}"
+        echo "Key: ${itr}"
         def count = 0
-        for (def value in params.inputScan.get(key)) {
+        for (def value in params.inputScan.get(itr)) {
            if (count == 0) {
                 println "The count is 0!"
                   echo "Value: ${value}"
@@ -27,7 +27,30 @@ def call(Map params = [:]) {
               
                 echo "bList: ${bList}"
                }
+               
+               params.each { gkey, value ->
+       					 if (gkey== 'giturl'){
+        					params.put(key,"${itr}")
+        					}
+       					
+    			}
+               
+               for (i=0; i < cList.size(); i++ ){
+               			params.each { key, value ->
+       					 if (key== 'compname'){
+        					params.put(key,cList[i])
+        					}
+       					  if (key== 'buildfile'){
+        					params.put(key,bList[i])
+        			}
+    			}
+               
+               }
         }
+        
+           
+   echo "*********************************************"
+   println params
     }
 
   
