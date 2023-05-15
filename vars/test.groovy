@@ -7,5 +7,11 @@ def call(Map params = [:]) {
         println "Values: ${value.join(', ')}"
     }
   
+  for (def key in params.inputMap.keySet()) {
+        echo "Key: ${key}"
+        for (def value in params.inputMap.get(key)) {
+            echo "Value: ${value}"
+        }
+    }
   
 }
