@@ -13,13 +13,13 @@ def call(Map params = [:]) {
         echo "Key: ${key}"
         def count = 0
         for (def value in params.inputScan.get(key)) {
-           
-            echo "Value: ${value}"
            if (count == 0) {
                 println "The count is 0!"
+                  echo "Value: ${value}"
                 count++
                    }else {
                 println "The count is 1!"
+                  echo "Value: ${value}"
                
                }
         }
