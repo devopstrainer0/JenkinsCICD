@@ -14,7 +14,6 @@ def call(Map params = [:]) {
         for (def value in params.inputScan.get(key)) {
            
             echo "Value: ${value}"
-           for 
         }
     }
    
