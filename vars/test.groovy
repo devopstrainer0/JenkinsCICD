@@ -1,44 +1,40 @@
 def call(Map params = [:]) {
-         def cList = []
-        def bList = []
+   
     println params
-    echo "*********************************************"
+    println "*********************************************"
     println "Name: ${params.name}"
     println "Number: ${params.number}"
-    for (def itr in params.inputScan.keySet()) {
    
-        echo "Key: ${itr}"
+    for (def itr in params.inputScan.keySet()) {
+        def cList = []
+        def bList = []
+        println "Key: ${itr}"
         def count = 0
         for (def value in params.inputScan.get(itr)) {
             if (count == 0) {
                 println "The count is 0!"
-                echo "Value: ${value}"
+                println "Value: ${value}"
                 cList = value
-                echo "cList: ${cList}"
+                println "cList: ${cList}"
                 count++
             } else {
                 println "The count is 1!"
-                echo "Value: ${value}"
+                println "Value: ${value}"
                 bList = value
-                echo "bList: ${bList}"
+                println "bList: ${bList}"
             }
-            
         }
         
-    }
-
-            if (cList.size() == bList.size()) {
-                for (i = 0; i < cList.size(); i++) {
-                    params.each { key, val ->
-                        if (key == 'compname') {
-                            params.put(key, cList[i])
-                        }
-                        if (key == 'buildfile') {
-                            params.put(key, bList[i])
-                        }
-                    }
-                }
+        if (cList.size() == bList.size()) {
+            for (i = 0; i < cList.size(); i++) {
+                params.compname = cList[i]
+                params.buildfile = bList[i]
+                params.giturl = itr
+                println "Updated params: ${params}"
             }
-    echo "*********************************************"
+        }
+    }
+    
+    println "*********************************************"
     println params
 }
